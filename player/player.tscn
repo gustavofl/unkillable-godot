@@ -1,27 +1,31 @@
 [gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" type="Texture" id=2]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-idle-01.png" type="Texture" id=3]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-die-00.png" type="Texture" id=4]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-die-01.png" type="Texture" id=5]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-die-02.png" type="Texture" id=6]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-die-03.png" type="Texture" id=7]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-die-04.png" type="Texture" id=8]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-die-05.png" type="Texture" id=9]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-die-06.png" type="Texture" id=10]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" type="Texture" id=11]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-00.png" type="Texture" id=12]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-01.png" type="Texture" id=13]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-02.png" type="Texture" id=14]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-03.png" type="Texture" id=15]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-04.png" type="Texture" id=16]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-05.png" type="Texture" id=17]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-attack2-01.png" type="Texture" id=18]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-attack2-02.png" type="Texture" id=19]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-attack2-03.png" type="Texture" id=20]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-attack2-04.png" type="Texture" id=21]
-[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-cast-01.png" type="Texture" id=22]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" type="Texture" id=2]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-idle-01.png" type="Texture" id=3]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-die-00.png" type="Texture" id=4]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-die-01.png" type="Texture" id=5]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-die-02.png" type="Texture" id=6]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-die-03.png" type="Texture" id=7]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-die-04.png" type="Texture" id=8]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-die-05.png" type="Texture" id=9]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-die-06.png" type="Texture" id=10]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" type="Texture" id=11]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-run-00.png" type="Texture" id=12]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-run-01.png" type="Texture" id=13]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-run-02.png" type="Texture" id=14]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-run-03.png" type="Texture" id=15]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-run-04.png" type="Texture" id=16]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-run-05.png" type="Texture" id=17]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-attack2-01.png" type="Texture" id=18]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-attack2-02.png" type="Texture" id=19]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-attack2-03.png" type="Texture" id=20]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-attack2-04.png" type="Texture" id=21]
+[ext_resource path="res://texturas/player/Adventurer-1.5/Individual Sprites/adventurer-cast-01.png" type="Texture" id=22]
+
+
+
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -69,6 +73,8 @@ extents = Vector2( 14.8666, 26.2903 )
 
 [node name="player" type="KinematicBody2D"]
 position = Vector2( 332.006, 376.737 )
+collision_layer = 2
+collision_mask = 13
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -90,8 +96,8 @@ limit_top = 0
 limit_bottom = 600
 
 [node name="dano" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
+collision_mask = 4
 __meta__ = {
 "_edit_group_": true
 }
@@ -102,8 +108,8 @@ shape = SubResource( 3 )
 
 [node name="ataque_direita" type="Area2D" parent="."]
 position = Vector2( 30.9175, 9.27524 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
+collision_mask = 4
 __meta__ = {
 "_edit_group_": true
 }
@@ -114,8 +120,8 @@ shape = SubResource( 4 )
 
 [node name="ataque_esquerda" type="Area2D" parent="."]
 position = Vector2( -37.8145, 8.79959 )
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
+collision_mask = 4
 __meta__ = {
 "_edit_group_": true
 }

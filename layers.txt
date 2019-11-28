@@ -1,0 +1,5 @@
+1: chao e paredes
+2: jogador
+3: enimigos
+4: colecionaveis
+
