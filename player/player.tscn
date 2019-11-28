@@ -1,0 +1,106 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://player/player.gd" type="Script" id=1]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-idle-00.png" type="Texture" id=2]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-idle-01.png" type="Texture" id=3]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-jump-03.png" type="Texture" id=4]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-00.png" type="Texture" id=5]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-01.png" type="Texture" id=6]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-02.png" type="Texture" id=7]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-03.png" type="Texture" id=8]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-04.png" type="Texture" id=9]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-run-05.png" type="Texture" id=10]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-attack2-01.png" type="Texture" id=11]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-attack2-02.png" type="Texture" id=12]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-attack2-03.png" type="Texture" id=13]
+[ext_resource path="res://player/sprites2.0/Adventurer-1.5/Individual Sprites/adventurer-attack2-04.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.5
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
+"speed": 7.5
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "attack",
+"speed": 15.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 17.3578
+height = 27.3386
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9.30124, 1.57043 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 18.8472
+height = 25.2046
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 14.8666, 26.2903 )
+
+[node name="player" type="KinematicBody2D"]
+position = Vector2( 332.006, 376.737 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 9.53674e-06, 3.0912 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "attack"
+frame = 1
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( -2.93481, 9.20837 )
+shape = SubResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_top = 0
+limit_bottom = 600
+
+[node name="pes" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="pes"]
+position = Vector2( -2.61609, 39.717 )
+shape = SubResource( 3 )
+disabled = true
+
+[node name="dano" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="dano"]
+position = Vector2( -3.05862, 8.11426 )
+shape = SubResource( 5 )
+
+[node name="ataque" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="ataque"]
+position = Vector2( 31.305, 9.45758 )
+shape = SubResource( 6 )
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
+[connection signal="body_entered" from="pes" to="." method="_on_pes_body_entered"]
+[connection signal="body_entered" from="dano" to="." method="_on_dano_body_entered"]
+[connection signal="body_entered" from="ataque" to="." method="_on_ataque_body_entered"]
+[connection signal="input_event" from="ataque" to="." method="_on_ataque_input_event"]
