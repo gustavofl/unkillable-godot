@@ -38,8 +38,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 19.6076
-height = 39.5605
+radius = 32.6693
+height = 22.9727
 
 [sub_resource type="Animation" id=3]
 resource_name = "die"
@@ -98,14 +98,15 @@ collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 26.2552, -11.0529 )
+position = Vector2( 4.01715, -4.56671 )
 scale = Vector2( 0.335123, 0.334586 )
 frames = SubResource( 1 )
-animation = "hurt"
+animation = "walk"
+frame = 2
 playing = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2( 4.17007, -3.32641 )
+position = Vector2( 3.2435, -3.32641 )
 shape = SubResource( 2 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -113,7 +114,7 @@ anims/die = SubResource( 3 )
 anims/hurt = SubResource( 4 )
 
 [node name="chao_direita" type="Area2D" parent="."]
-position = Vector2( -23.8005, 43.4453 )
+position = Vector2( -37.3853, 43.4453 )
 collision_layer = 0
 __meta__ = {
 "_edit_group_": true
@@ -124,7 +125,7 @@ position = Vector2( 0.187714, 0.363922 )
 shape = SubResource( 5 )
 
 [node name="chao_esquerda" type="Area2D" parent="."]
-position = Vector2( 27.9155, 43.5255 )
+position = Vector2( 44.5192, 42.3934 )
 collision_layer = 0
 __meta__ = {
 "_edit_group_": true
@@ -139,11 +140,11 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="bar" type="TextureProgress" parent="healthBar"]
-margin_left = -12.0217
-margin_top = -41.6191
-margin_right = 185.978
-margin_bottom = -14.6191
-rect_scale = Vector2( 0.15, 0.15 )
+margin_left = -24.4745
+margin_top = -44.6379
+margin_right = 173.526
+margin_bottom = -17.6379
+rect_scale = Vector2( 0.26, 0.15 )
 value = 50.0
 texture_under = ExtResource( 23 )
 texture_progress = ExtResource( 23 )
@@ -151,8 +152,9 @@ tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 1, 0, 0, 1 )
 
 [node name="parede_direita" type="Area2D" parent="."]
-position = Vector2( 26.0884, -3.42584 )
+position = Vector2( 38.5411, -4.55789 )
 collision_layer = 0
+collision_mask = 17
 __meta__ = {
 "_edit_group_": true
 }
@@ -162,8 +164,9 @@ position = Vector2( 0, 1.05408 )
 shape = SubResource( 6 )
 
 [node name="parede_esquerda" type="Area2D" parent="."]
-position = Vector2( -17.9193, -4.47986 )
+position = Vector2( -32.6362, -3.72516 )
 collision_layer = 0
+collision_mask = 17
 __meta__ = {
 "_edit_group_": true
 }

@@ -11,6 +11,7 @@ var life = max_life
 
 var tomando_dano = false
 var morrendo = false
+var bateu_parede = false
 
 func _ready():
 	$Sprite.play("walk");
@@ -23,19 +24,20 @@ func _ready():
 	flip = randi()%3 == 1
 
 func _process(delta):
-	if flip:
-		if tomando_dano:
+	if tomando_dano and not bateu_parede:
+		if flip:
 			$".".position.x -= speed
 		else:
 			$".".position.x += speed
-			
+	else:
+		if flip:
+			$".".position.x += speed
+		else:
+			$".".position.x -= speed
+	
+	if flip:
 		$Sprite.flip_h = false
 	else:
-		if tomando_dano:
-			$".".position.x += speed
-		else:
-			$".".position.x -= speed
-		
 		$Sprite.flip_h = true
 
 func dano(body, amount):
@@ -80,8 +82,9 @@ func reviver():
 	life = max_life
 	$healthBar/bar.value = life
 
-func _on_parede_direita_body_entered(body):
-	flip = false
+func _on_parede_body_entered(body):
+	flip = !flip
+	bateu_parede = true
 
-func _on_parede_esquerda_body_entered(body):
-	flip = true
+func _on_parede_body_exited(body):
+	bateu_parede = false

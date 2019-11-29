@@ -2,4 +2,4 @@
 2: jogador
 3: enimigos
 4: colecionaveis
-
+5: paredes invisiveis

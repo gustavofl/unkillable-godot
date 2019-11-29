@@ -102,7 +102,7 @@ position = Vector2( 2.85419, 6.49133 )
 scale = Vector2( 0.365074, 0.403554 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 16
+frame = 5
 playing = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]
@@ -154,6 +154,7 @@ tint_progress = Color( 1, 0, 0, 1 )
 [node name="parede_direita" type="Area2D" parent="."]
 position = Vector2( 27.8044, 6.49991 )
 collision_layer = 0
+collision_mask = 17
 __meta__ = {
 "_edit_group_": true
 }
@@ -165,6 +166,7 @@ shape = SubResource( 6 )
 [node name="parede_esquerda" type="Area2D" parent="."]
 position = Vector2( -18.531, 6.32111 )
 collision_layer = 0
+collision_mask = 17
 __meta__ = {
 "_edit_group_": true
 }
@@ -177,7 +179,7 @@ shape = SubResource( 6 )
 [connection signal="body_exited" from="chao_direita" to="." method="_on_chao_direita_body_exited"]
 [connection signal="body_entered" from="chao_esquerda" to="." method="_on_chao_esquerda_body_entered"]
 [connection signal="body_exited" from="chao_esquerda" to="." method="_on_chao_esquerda_body_exited"]
-[connection signal="area_shape_entered" from="parede_direita" to="." method="_on_parede_direita_area_shape_entered"]
-[connection signal="body_entered" from="parede_direita" to="." method="_on_parede_direita_body_entered"]
-[connection signal="area_shape_entered" from="parede_esquerda" to="." method="_on_parede_esquerda_area_shape_entered"]
-[connection signal="body_entered" from="parede_esquerda" to="." method="_on_parede_esquerda_body_entered"]
+[connection signal="body_entered" from="parede_direita" to="." method="_on_parede_body_entered"]
+[connection signal="body_exited" from="parede_direita" to="." method="_on_parede_body_exited"]
+[connection signal="body_entered" from="parede_esquerda" to="." method="_on_parede_body_entered"]
+[connection signal="body_exited" from="parede_esquerda" to="." method="_on_parede_body_exited"]
