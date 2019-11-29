@@ -19,7 +19,7 @@ var atacando = false
 var tomando_dano = false
 
 func _ready():
-	if get_tree().get_current_scene().get_name() == "cena_principal":
+	if get_tree().get_current_scene().get_name() != "cena_principal":
 		life = Global.player_max_life
 		Global.player_current_life = life
 	else:
@@ -97,7 +97,7 @@ func _physics_process(delta):
 	motion = move_and_slide(motion, UP)
 
 func _on_dano_body_entered(body):
-	if(body.morrendo):
+	if(body.morrendo or body.tomando_dano):
 		return
 	
 	increment_life(-body.dano)

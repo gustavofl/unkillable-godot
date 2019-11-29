@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://cenas/segunda_cena.gd" type="Script" id=1]
 [ext_resource path="res://audios/background01.ogg" type="AudioStream" id=2]
@@ -11,8 +11,11 @@
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://cenas/inimigos.gd" type="Script" id=10]
 [ext_resource path="res://inimigos/zumbi-male.tscn" type="PackedScene" id=11]
-[ext_resource path="res://inimigos/zumbi-boss.tscn" type="PackedScene" id=12]
-[ext_resource path="res://inimigos/monster2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://inimigos/monster2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://inimigos/mago.tscn" type="PackedScene" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 335.507, 91.2214 )
 
 [node name="mundo" type="Node2D"]
 script = ExtResource( 1 )
@@ -56,12 +59,21 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 327759, 0, 0, 327760, 1, 0, 327761, 1, 0, 327762, 1, 0, 327763, 1, 0, 327764, 1, 0, 327765, 2, 0, 393276, 13, 0, 393277, 1, 0, 393278, 1, 0, 393279, 1, 0, 393280, 1, 0, 393281, 1, 0, 393282, 14, 0, 458810, 13, 0, 458811, 1, 0, 458812, 16, 0, 458818, 11, 0, 524321, 0, 0, 524322, 1, 0, 524323, 1, 0, 524324, 1, 0, 524325, 1, 0, 524326, 1, 0, 524327, 1, 0, 524328, 1, 0, 524329, 1, 0, 524330, 2, 0, 524343, 0, 0, 524344, 1, 0, 524345, 1, 0, 524346, 16, 0, 524354, 15, 0, 524355, 1, 0, 524356, 1, 0, 524357, 1, 0, 524358, 1, 0, 524359, 1, 0, 524360, 1, 0, 524361, 1, 0, 524362, 1, 0, 524363, 1, 0, 524364, 1, 0, 524365, 2, 0, 655406, 0, 0, 655407, 1, 0, 655408, 1, 0, 655409, 1, 0, 655410, 2, 0, 786459, 0, 0, 786460, 1, 0, 786461, 1, 0, 786462, 1, 0, 786463, 1, 0, 786464, 2, 0, 786497, 10, 0, 786503, 0, 0, 786504, 1, 0, 786505, 1, 0, 786506, 1, 0, 786507, 1, 0, 786508, 1, 0, 786509, 1, 0, 786510, 1, 0, 786511, 1, 0, 786512, 1, 0, 786513, 1, 0, 786514, 1, 0, 786515, 1, 0, 786516, 1, 0, 786517, 1, 0, 786518, 14, 0, 851985, 13, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 2, 0, 852033, 11, 0, 852054, 11, 0, 917517, 0, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 16, 0, 917569, 11, 0, 917590, 11, 0, 983040, 10, 0, 983081, 0, 0, 983082, 1, 0, 983083, 1, 0, 983084, 1, 0, 983085, 1, 0, 983086, 1, 0, 983087, 1, 0, 983088, 2, 0, 983105, 11, 0, 983126, 11, 0, 1048576, 11, 0, 1048641, 11, 0, 1048662, 11, 0, 1114112, 11, 0, 1114135, 13, 0, 1114136, 1, 0, 1114137, 1, 0, 1114138, 1, 0, 1114139, 1, 0, 1114140, 1, 0, 1114141, 1, 0, 1114142, 1, 0, 1114143, 1, 0, 1114144, 1, 0, 1114145, 14, 0, 1114177, 11, 0, 1114198, 11, 0, 1179648, 15, 0, 1179649, 1, 0, 1179650, 1, 0, 1179651, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179655, 1, 0, 1179656, 1, 0, 1179657, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 16, 0, 1179681, 15, 0, 1179682, 1, 0, 1179683, 1, 0, 1179684, 1, 0, 1179685, 1, 0, 1179686, 1, 0, 1179687, 1, 0, 1179688, 1, 0, 1179689, 1, 0, 1179690, 1, 0, 1179691, 1, 0, 1179692, 1, 0, 1179693, 1, 0, 1179694, 1, 0, 1179695, 1, 0, 1179696, 1, 0, 1179697, 1, 0, 1179698, 1, 0, 1179699, 1, 0, 1179700, 1, 0, 1179701, 1, 0, 1179702, 1, 0, 1179703, 2, 0, 1179713, 15, 0, 1179714, 1, 0, 1179715, 1, 0, 1179716, 1, 0, 1179717, 1, 0, 1179718, 1, 0, 1179719, 1, 0, 1179720, 1, 0, 1179721, 1, 0, 1179722, 1, 0, 1179723, 1, 0, 1179724, 1, 0, 1179725, 1, 0, 1179726, 1, 0, 1179727, 1, 0, 1179728, 1, 0, 1179729, 1, 0, 1179730, 1, 0, 1179731, 1, 0, 1179732, 1, 0, 1179733, 1, 0, 1179734, 16, 0 )
 
+[node name="paredes_invisiveis" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 16
+collision_mask = 4
+format = 1
+tile_data = PoolIntArray( 327712, 10, 0, 327723, 10, 0, 327758, 10, 0, 393248, 10, 0, 393259, 10, 0, 393294, 10, 0, 458784, 10, 0, 458795, 10, 0, 458830, 10, 0, 524320, 10, 0, 524331, 10, 0, 524366, 10, 0, 786472, 10, 0, 786481, 10, 0, 852008, 10, 0, 852017, 10, 0, 917544, 10, 0, 917553, 10, 0, 983080, 10, 0, 983089, 10, 0 )
+
 [node name="pocao_vida" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2636.48, 145.308 )
 collision_mask = 1
 
 [node name="player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 87.6306, 533.208 )
+position = Vector2( 2319.02, 334.577 )
 
 [node name="inimigos" type="Node" parent="."]
 script = ExtResource( 10 )
@@ -69,12 +81,22 @@ script = ExtResource( 10 )
 [node name="zumbi" parent="inimigos" instance=ExtResource( 11 )]
 position = Vector2( 1211.83, 224.568 )
 
-[node name="boss" parent="inimigos" instance=ExtResource( 12 )]
-position = Vector2( 2631.41, 548.894 )
-
-[node name="zumbi2" parent="inimigos" instance=ExtResource( 13 )]
+[node name="zumbi2" parent="inimigos" instance=ExtResource( 12 )]
 position = Vector2( 1430.22, 443.355 )
 
-[node name="zumbi3" parent="inimigos" instance=ExtResource( 13 )]
+[node name="zumbi3" parent="inimigos" instance=ExtResource( 12 )]
 position = Vector2( 2323.77, 226.231 )
+
+[node name="mago" parent="inimigos" instance=ExtResource( 13 )]
+position = Vector2( 2661.46, 502.768 )
+
+[node name="sensor_mago" type="Area2D" parent="inimigos"]
+position = Vector2( 2359.14, 460.862 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="inimigos/sensor_mago"]
+position = Vector2( 74.8208, 36.7302 )
+shape = SubResource( 1 )
 [connection signal="popup_hide" from="GUI/power_up_popup" to="." method="_on_power_up_popup_popup_hide"]
+[connection signal="body_entered" from="inimigos/sensor_mago" to="inimigos/mago" method="criar_escravo"]

@@ -1,19 +1,22 @@
 extends StaticBody2D
 
 const speed = 0.4
-const max_life = 15
+const max_life = 30
+const INTERVALO_ESCRAVOS = 7 # em segundos
 
 var posicao_inicial = Vector2()
-var dano = 8
+var dano = 12
 var flip = true
 var posicao_final
 var life = max_life
 
 var tomando_dano = false
 var morrendo = false
+var criando_escravo = false
+var timer_escravo = INTERVALO_ESCRAVOS
 
 func _ready():
-	$Sprite.play("walk");
+	$Sprite.play("idle");
 	
 	$healthBar/bar.max_value = max_life
 	$healthBar/bar.value = life
@@ -21,28 +24,22 @@ func _ready():
 	posicao_inicial = get_position()
 
 func _process(delta):
-	if flip:
-		if tomando_dano:
-			$".".position.x -= speed
-		else:
-			$".".position.x += speed
-			
-		$Sprite.flip_h = false
-	else:
-		if tomando_dano:
-			$".".position.x += speed
-		else:
-			$".".position.x -= speed
+	if criando_escravo:
+		timer_escravo += delta
+		if timer_escravo >= INTERVALO_ESCRAVOS:
+			timer_escravo -= INTERVALO_ESCRAVOS
 		
-		$Sprite.flip_h = true
+			var zumbi_resource = preload("zumbi-male.tscn")
+			var zumbi = zumbi_resource.instance()
+			var posicao = get_position()
+			posicao.x -= 100
+			posicao.y += 37
+			zumbi.set_position(posicao)
+			$"../..".add_child(zumbi)
+			zumbi.flip = false
 
 func dano(body, amount):
 	tomando_dano = true
-	
-	if body.get_position().x < get_position().x:
-		flip = false
-	else:
-		flip = true
 	
 	life -= amount
 	$healthBar/bar.value = life
@@ -50,7 +47,6 @@ func dano(body, amount):
 	if life <= 0:
 		die()
 	else:
-		$Sprite.play("hurt")
 		get_node("anim").play("hurt")
 
 func die():
@@ -65,17 +61,10 @@ func destroy():
 	power_up.set_position(get_position())
 	$"../..".add_child(power_up)
 
-func _on_chao_direita_body_exited(body):
-	flip = true
-
-func _on_chao_esquerda_body_exited(body):
-	flip = false
-
-
 func _on_anim_animation_finished(anim_name):
 	if(anim_name == "hurt"):
 		tomando_dano = false
-		$Sprite.play("walk")
+		# $Sprite.play("walk")
 
 func reviver():
 	set_position(posicao_inicial)
@@ -83,8 +72,5 @@ func reviver():
 	life = max_life
 	$healthBar/bar.value = life
 
-func _on_parede_direita_body_entered(body):
-	flip = false
-
-func _on_parede_esquerda_body_entered(body):
-	flip = true
+func criar_escravo(body):
+	criando_escravo = true
