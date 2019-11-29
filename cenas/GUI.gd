@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-onready var bar = $interface/VBoxContainer/Healthbar/TextureProgress
+onready var bar = $interface/Bars/Healthbar/TextureProgress
 onready var player = $"../player"
 
 func _ready():

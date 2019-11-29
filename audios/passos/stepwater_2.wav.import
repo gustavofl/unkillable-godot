@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stepwater_2.wav-041e5c550bcb79f8e2fcef01e973a3e9.sample"
+
+[deps]
+
+source_file="res://audios/passos/stepwater_2.wav"
+dest_files=[ "res://.import/stepwater_2.wav-041e5c550bcb79f8e2fcef01e973a3e9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

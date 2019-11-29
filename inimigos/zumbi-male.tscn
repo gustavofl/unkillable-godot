@@ -1,35 +1,35 @@
 [gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://inimigos/zumbi-male.gd" type="Script" id=1]
-[ext_resource path="res://inimigos/zombie-male/Idle (1).png" type="Texture" id=2]
-[ext_resource path="res://inimigos/zombie-male/Walk (1).png" type="Texture" id=3]
-[ext_resource path="res://inimigos/zombie-male/Walk (2).png" type="Texture" id=4]
-[ext_resource path="res://inimigos/zombie-male/Walk (3).png" type="Texture" id=5]
-[ext_resource path="res://inimigos/zombie-male/Walk (4).png" type="Texture" id=6]
-[ext_resource path="res://inimigos/zombie-male/Walk (5).png" type="Texture" id=7]
-[ext_resource path="res://inimigos/zombie-male/Walk (6).png" type="Texture" id=8]
-[ext_resource path="res://inimigos/zombie-male/Walk (7).png" type="Texture" id=9]
-[ext_resource path="res://inimigos/zombie-male/Walk (8).png" type="Texture" id=10]
-[ext_resource path="res://inimigos/zombie-male/Walk (9).png" type="Texture" id=11]
-[ext_resource path="res://inimigos/zombie-male/Walk (10).png" type="Texture" id=12]
+[ext_resource path="res://inimigos/zombie-male/Walk (1).png" type="Texture" id=2]
+[ext_resource path="res://inimigos/zombie-male/Walk (2).png" type="Texture" id=3]
+[ext_resource path="res://inimigos/zombie-male/Walk (3).png" type="Texture" id=4]
+[ext_resource path="res://inimigos/zombie-male/Walk (4).png" type="Texture" id=5]
+[ext_resource path="res://inimigos/zombie-male/Walk (5).png" type="Texture" id=6]
+[ext_resource path="res://inimigos/zombie-male/Walk (6).png" type="Texture" id=7]
+[ext_resource path="res://inimigos/zombie-male/Walk (7).png" type="Texture" id=8]
+[ext_resource path="res://inimigos/zombie-male/Walk (8).png" type="Texture" id=9]
+[ext_resource path="res://inimigos/zombie-male/Walk (9).png" type="Texture" id=10]
+[ext_resource path="res://inimigos/zombie-male/Walk (10).png" type="Texture" id=11]
+[ext_resource path="res://inimigos/zombie-male/Idle (1).png" type="Texture" id=12]
 [ext_resource path="res://texturas/healthbar_fill.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "hurt",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "walk",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 19.6076
-height = 24.1235
+height = 21.5514
 
 [sub_resource type="Animation" id=3]
 resource_name = "die"
@@ -99,18 +99,6 @@ shape = SubResource( 2 )
 anims/die = SubResource( 3 )
 anims/hurt = SubResource( 4 )
 
-[node name="healthBar" type="TextureProgress" parent="."]
-margin_left = -10.4648
-margin_top = -30.4431
-margin_right = 187.535
-margin_bottom = -3.44312
-rect_scale = Vector2( 0.15, 0.15 )
-value = 50.0
-texture_under = ExtResource( 13 )
-texture_progress = ExtResource( 13 )
-tint_under = Color( 0, 0, 0, 1 )
-tint_progress = Color( 1, 0, 0, 1 )
-
 [node name="chao_direita" type="Area2D" parent="."]
 position = Vector2( -23.8005, 43.4453 )
 collision_layer = 0
@@ -132,6 +120,22 @@ __meta__ = {
 [node name="shape" type="CollisionShape2D" parent="chao_esquerda"]
 position = Vector2( -0.203613, 0.290466 )
 shape = SubResource( 5 )
+
+[node name="healthBar" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="bar" type="TextureProgress" parent="healthBar"]
+margin_left = -10.3491
+margin_top = -28.2393
+margin_right = 187.651
+margin_bottom = -1.23926
+rect_scale = Vector2( 0.15, 0.15 )
+value = 50.0
+texture_under = ExtResource( 13 )
+texture_progress = ExtResource( 13 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 1, 0, 0, 1 )
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
 [connection signal="body_exited" from="chao_direita" to="." method="_on_chao_direita_body_exited"]
 [connection signal="body_exited" from="chao_esquerda" to="." method="_on_chao_esquerda_body_exited"]

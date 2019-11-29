@@ -3,9 +3,9 @@ extends StaticBody2D
 const speed = 0.4
 const max_life = 10
 
+var posicao_inicial = Vector2()
 var dano = 5
 var flip = true
-var posicao_inicial
 var posicao_final
 var life = max_life
 
@@ -14,11 +14,11 @@ var morrendo = false
 
 func _ready():
 	$Sprite.play("walk");
-	posicao_inicial = $".".position.x
-	posicao_final = posicao_inicial + 100
 	
-	$healthBar.max_value = max_life
-	$healthBar.value = life
+	$healthBar/bar.max_value = max_life
+	$healthBar/bar.value = life
+	
+	posicao_inicial = get_position()
 
 func _process(delta):
 	if flip:
@@ -45,7 +45,7 @@ func dano(body, amount):
 		flip = true
 	
 	life -= amount
-	$healthBar.value = life
+	$healthBar/bar.value = life
 	
 	if life <= 0:
 		die()
@@ -71,3 +71,9 @@ func _on_anim_animation_finished(anim_name):
 	if(anim_name == "hurt"):
 		tomando_dano = false
 		$Sprite.play("walk")
+
+func reviver():
+	set_position(posicao_inicial)
+	
+	life = max_life
+	$healthBar/bar.value = life

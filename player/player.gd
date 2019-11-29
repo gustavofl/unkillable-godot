@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const UP = Vector2(0, -1)
+const MIN_Y = -700
 const SPEED = 200
 const GRAVITY = 43000
 const JUMP_HEIGHT = 25000
@@ -8,6 +9,7 @@ const DASH = 150
 const LIFE_POWER_UP = 1.2
 const ATTACK_POWER_UP = 1.5
 
+var posicao_inicial = Vector2()
 var speed_y = 0
 var motion = Vector2()
 var max_life = 20
@@ -22,8 +24,13 @@ func _ready():
 	life = max_life
 	$ataque_direita/shape.disabled = true
 	$ataque_esquerda/shape.disabled = true
+	
+	posicao_inicial = get_position()
 
 func _physics_process(delta):
+	
+	if get_position().y <= MIN_Y:
+		reviver()
 	
 	if Input.is_action_pressed("ui_right"):
 		motion.x = SPEED
@@ -93,7 +100,7 @@ func _on_dano_body_entered(body):
 	increment_life(-body.dano)
 	
 	if life <= 0:
-		get_tree().change_scene("res://cenas/menu.tscn")
+		reviver()
 	else:
 		$Sprite.play("hurt")
 		sprite_travado = true
@@ -122,7 +129,7 @@ func _on_ataque_esquerda_body_entered(body):
 	body.dano(self, forca_ataque)
 
 func increment_life(amount):
-	var healthBar = $"../GUI/interface/VBoxContainer/Healthbar/TextureProgress"
+	var healthBar = $"../GUI/interface/Bars/Healthbar/TextureProgress"
 	life += amount
 	healthBar.value = life
 
@@ -134,7 +141,7 @@ func recuperar_vida():
 func increment_max_life():
 	max_life *= LIFE_POWER_UP
 	
-	var healthBar = $"../GUI/interface/VBoxContainer/Healthbar/TextureProgress"
+	var healthBar = $"../GUI/interface/Bars/Healthbar/TextureProgress"
 
 	healthBar.rect_scale.x *= LIFE_POWER_UP
 	healthBar.max_value = max_life
@@ -144,3 +151,8 @@ func increment_max_life():
 
 func increment_attack():
 	forca_ataque *= ATTACK_POWER_UP
+
+func reviver():
+	set_position(posicao_inicial)
+	recuperar_vida()
+	$"../inimigos".reviver_filhos()

@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://cenas/power_up_popup.gd" type="Script" id=1]
+
+[node name="power_up_popup" type="PopupMenu"]
+pause_mode = 2
+margin_left = 192.0
+margin_top = 162.0
+margin_right = 468.0
+margin_bottom = 382.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="titulo" type="Label" parent="."]
+margin_left = 96.74
+margin_top = 16.2902
+margin_right = 165.74
+margin_bottom = 47.2902
+text = "POWER UP"
+
+[node name="texto" type="Label" parent="."]
+margin_left = 59.4334
+margin_top = 60.31
+margin_right = 207.433
+margin_bottom = 108.31
+text = "Você coletou um
+power up, qual atributo
+deseja aprimorar?"
+align = 1
+
+[node name="aumentar_ataque" type="Button" parent="."]
+margin_left = 75.5564
+margin_top = 128.754
+margin_right = 191.556
+margin_bottom = 148.754
+text = "Poder de ataque"
+
+[node name="aumentar_vida" type="Button" parent="."]
+margin_left = 85.8449
+margin_top = 169.428
+margin_right = 178.845
+margin_bottom = 189.428
+text = "Vida Máxima"
+[connection signal="pressed" from="aumentar_ataque" to="." method="_on_aumentar_ataque_pressed"]
+[connection signal="pressed" from="aumentar_vida" to="." method="_on_aumentar_vida_pressed"]
