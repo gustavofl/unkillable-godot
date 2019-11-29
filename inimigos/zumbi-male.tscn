@@ -1,45 +1,45 @@
 [gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://inimigos/zumbi-male.gd" type="Script" id=1]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_000.png" type="Texture" id=2]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_001.png" type="Texture" id=3]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_002.png" type="Texture" id=4]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_003.png" type="Texture" id=5]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_004.png" type="Texture" id=6]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_005.png" type="Texture" id=7]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_006.png" type="Texture" id=8]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_007.png" type="Texture" id=9]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_008.png" type="Texture" id=10]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_009.png" type="Texture" id=11]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_010.png" type="Texture" id=12]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_011.png" type="Texture" id=13]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_012.png" type="Texture" id=14]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_013.png" type="Texture" id=15]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_014.png" type="Texture" id=16]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_015.png" type="Texture" id=17]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_016.png" type="Texture" id=18]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_017.png" type="Texture" id=19]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_018.png" type="Texture" id=20]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_019.png" type="Texture" id=21]
-[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_attack_000.png" type="Texture" id=22]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_attack_000.png" type="Texture" id=2]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_000.png" type="Texture" id=3]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_001.png" type="Texture" id=4]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_002.png" type="Texture" id=5]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_003.png" type="Texture" id=6]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_004.png" type="Texture" id=7]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_005.png" type="Texture" id=8]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_006.png" type="Texture" id=9]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_007.png" type="Texture" id=10]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_008.png" type="Texture" id=11]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_009.png" type="Texture" id=12]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_010.png" type="Texture" id=13]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_011.png" type="Texture" id=14]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_012.png" type="Texture" id=15]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_013.png" type="Texture" id=16]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_014.png" type="Texture" id=17]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_015.png" type="Texture" id=18]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_016.png" type="Texture" id=19]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_017.png" type="Texture" id=20]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_018.png" type="Texture" id=21]
+[ext_resource path="res://texturas/monstros/PNG/4/4_enemies_1_walk_019.png" type="Texture" id=22]
 [ext_resource path="res://texturas/healthbar_fill.png" type="Texture" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "walk",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 22 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "hurt",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "walk",
+"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 19.6076
-height = 21.5514
+radius = 21.1108
+height = 27.0464
 
 [sub_resource type="Animation" id=3]
 resource_name = "die"
@@ -89,7 +89,7 @@ tracks/0/keys = {
 extents = Vector2( 10, 8.12604 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 1.83936, 28.1736 )
+extents = Vector2( 1.241, 29.6125 )
 
 [node name="zumbi" type="StaticBody2D"]
 position = Vector2( 395.129, 391.857 )
@@ -98,15 +98,15 @@ collision_mask = 3
 script = ExtResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 18.52, 2.74518 )
+position = Vector2( 2.85419, 6.49133 )
 scale = Vector2( 0.365074, 0.403554 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 9
+frame = 16
 playing = true
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2( 5.48767, 7.47794 )
+position = Vector2( 4.46811, 5.64277 )
 shape = SubResource( 2 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -114,7 +114,7 @@ anims/die = SubResource( 3 )
 anims/hurt = SubResource( 4 )
 
 [node name="chao_direita" type="Area2D" parent="."]
-position = Vector2( -23.8005, 43.4453 )
+position = Vector2( -25.0239, 45.8922 )
 collision_layer = 0
 __meta__ = {
 "_edit_group_": true
@@ -125,7 +125,7 @@ position = Vector2( 0.187714, 0.363922 )
 shape = SubResource( 5 )
 
 [node name="chao_esquerda" type="Area2D" parent="."]
-position = Vector2( 27.9155, 43.5255 )
+position = Vector2( 33.6249, 45.7685 )
 collision_layer = 0
 __meta__ = {
 "_edit_group_": true
@@ -152,7 +152,7 @@ tint_under = Color( 0, 0, 0, 1 )
 tint_progress = Color( 1, 0, 0, 1 )
 
 [node name="parede_direita" type="Area2D" parent="."]
-position = Vector2( 25.5614, 0.790527 )
+position = Vector2( 27.8044, 6.49991 )
 collision_layer = 0
 __meta__ = {
 "_edit_group_": true
@@ -163,7 +163,7 @@ position = Vector2( 0, 1.05408 )
 shape = SubResource( 6 )
 
 [node name="parede_esquerda" type="Area2D" parent="."]
-position = Vector2( -17.9193, 0 )
+position = Vector2( -18.531, 6.32111 )
 collision_layer = 0
 __meta__ = {
 "_edit_group_": true

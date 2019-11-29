@@ -1,10 +1,10 @@
 extends StaticBody2D
 
 const speed = 0.4
-const max_life = 10
+const max_life = 25
 
 var posicao_inicial = Vector2()
-var dano = 5
+var dano = 8
 var flip = true
 var posicao_final
 var life = max_life
