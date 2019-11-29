@@ -13,6 +13,9 @@ var player_attack = 5
 var player_max_life = 20
 var player_current_life
 
+# usado no dialogo inicial do jogo
+var inicio_jogo = true
+
 func get_volume_menu():
 	return calcular_volume(volume_porcentagem)
 
