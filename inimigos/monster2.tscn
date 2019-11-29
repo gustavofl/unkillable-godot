@@ -1,0 +1,182 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://inimigos/zumbi-male.gd" type="Script" id=1]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_000.png" type="Texture" id=2]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_001.png" type="Texture" id=3]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_002.png" type="Texture" id=4]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_003.png" type="Texture" id=5]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_004.png" type="Texture" id=6]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_005.png" type="Texture" id=7]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_006.png" type="Texture" id=8]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_007.png" type="Texture" id=9]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_008.png" type="Texture" id=10]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_009.png" type="Texture" id=11]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_010.png" type="Texture" id=12]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_011.png" type="Texture" id=13]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_012.png" type="Texture" id=14]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_013.png" type="Texture" id=15]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_014.png" type="Texture" id=16]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_015.png" type="Texture" id=17]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_016.png" type="Texture" id=18]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_017.png" type="Texture" id=19]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_018.png" type="Texture" id=20]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_walk_019.png" type="Texture" id=21]
+[ext_resource path="res://texturas/monstros/PNG/3/3_enemies_1_attack_000.png" type="Texture" id=22]
+[ext_resource path="res://texturas/healthbar_fill.png" type="Texture" id=23]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 19.6076
+height = 21.5514
+
+[sub_resource type="Animation" id=3]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.847059, 0.027451, 0.027451, 1 ), Color( 0.847059, 0.027451, 0.027451, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "destroy"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "hurt"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.847059, 0.027451, 0.027451, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 8.12604 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 1.83936, 28.1736 )
+
+[node name="zumbi" type="StaticBody2D"]
+position = Vector2( 395.129, 391.857 )
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 26.2552, -11.0529 )
+scale = Vector2( 0.335123, 0.334586 )
+frames = SubResource( 1 )
+animation = "hurt"
+playing = true
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2( 5.48767, 7.47794 )
+shape = SubResource( 2 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/die = SubResource( 3 )
+anims/hurt = SubResource( 4 )
+
+[node name="chao_direita" type="Area2D" parent="."]
+position = Vector2( -23.8005, 43.4453 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="shape" type="CollisionShape2D" parent="chao_direita"]
+position = Vector2( 0.187714, 0.363922 )
+shape = SubResource( 5 )
+
+[node name="chao_esquerda" type="Area2D" parent="."]
+position = Vector2( 27.9155, 43.5255 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="shape" type="CollisionShape2D" parent="chao_esquerda"]
+position = Vector2( -0.203613, 0.290466 )
+shape = SubResource( 5 )
+
+[node name="healthBar" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="bar" type="TextureProgress" parent="healthBar"]
+margin_left = -12.0217
+margin_top = -41.6191
+margin_right = 185.978
+margin_bottom = -14.6191
+rect_scale = Vector2( 0.15, 0.15 )
+value = 50.0
+texture_under = ExtResource( 23 )
+texture_progress = ExtResource( 23 )
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 1, 0, 0, 1 )
+
+[node name="parede_direita" type="Area2D" parent="."]
+position = Vector2( 25.5614, 0.790527 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="shape" type="CollisionShape2D" parent="parede_direita"]
+position = Vector2( 0, 1.05408 )
+shape = SubResource( 6 )
+
+[node name="parede_esquerda" type="Area2D" parent="."]
+position = Vector2( -17.9193, 0 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="shape" type="CollisionShape2D" parent="parede_esquerda"]
+position = Vector2( 0, 1.05408 )
+shape = SubResource( 6 )
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
+[connection signal="body_entered" from="chao_direita" to="." method="_on_chao_direita_body_entered"]
+[connection signal="body_exited" from="chao_direita" to="." method="_on_chao_direita_body_exited"]
+[connection signal="body_entered" from="chao_esquerda" to="." method="_on_chao_esquerda_body_entered"]
+[connection signal="body_exited" from="chao_esquerda" to="." method="_on_chao_esquerda_body_exited"]
+[connection signal="area_shape_entered" from="parede_direita" to="." method="_on_parede_direita_area_shape_entered"]
+[connection signal="body_entered" from="parede_direita" to="." method="_on_parede_direita_body_entered"]
+[connection signal="area_shape_entered" from="parede_esquerda" to="." method="_on_parede_esquerda_area_shape_entered"]
+[connection signal="body_entered" from="parede_esquerda" to="." method="_on_parede_esquerda_body_entered"]

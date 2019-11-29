@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stepstone_4.wav-615bbd787e2f2e9d3580ca4c5cc80cef.sample"
+
+[deps]
+
+source_file="res://audios/passos/stepstone_4.wav"
+dest_files=[ "res://.import/stepstone_4.wav-615bbd787e2f2e9d3580ca4c5cc80cef.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

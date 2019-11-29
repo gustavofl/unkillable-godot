@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://colecionaveis/pocao_vida.gd" type="Script" id=1]
+[ext_resource path="res://texturas/pocao_vida.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 35.4871
+
+[node name="pocao_vida" type="StaticBody2D"]
+position = Vector2( 207.837, 394.483 )
+input_pickable = true
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.0643311, 0.683838 )
+scale = Vector2( 0.129577, 0.129577 )
+texture = ExtResource( 2 )
+
+[node name="colisao" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="colisao"]
+shape = SubResource( 1 )
+[connection signal="body_entered" from="colisao" to="." method="_on_colisao_body_entered"]

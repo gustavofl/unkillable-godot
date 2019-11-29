@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stepdirt_6.wav-54416ead8c195029268511e3d6e3c156.sample"
+
+[deps]
+
+source_file="res://audios/passos/stepdirt_6.wav"
+dest_files=[ "res://.import/stepdirt_6.wav-54416ead8c195029268511e3d6e3c156.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
