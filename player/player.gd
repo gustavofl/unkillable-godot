@@ -19,11 +19,12 @@ var atacando = false
 var tomando_dano = false
 
 func _ready():
-	if get_tree().get_current_scene().get_name() != "cena_principal":
+	if Global.player_current_life == null:
 		life = Global.player_max_life
 		Global.player_current_life = life
 	else:
 		life = Global.player_current_life
+		increment_life(0)
 	
 	$ataque_direita/shape.disabled = true
 	$ataque_esquerda/shape.disabled = true
@@ -137,6 +138,7 @@ func increment_life(amount):
 	healthBar.value = life
 
 func recuperar_vida():
+	print("recuperar")
 	if Global.player_max_life > life:
 		increment_life(Global.player_max_life - life)
 		life = Global.player_max_life

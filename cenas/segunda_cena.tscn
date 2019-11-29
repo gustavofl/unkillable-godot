@@ -73,7 +73,7 @@ position = Vector2( 2636.48, 145.308 )
 collision_mask = 1
 
 [node name="player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2319.02, 334.577 )
+position = Vector2( 133.749, 530.954 )
 
 [node name="inimigos" type="Node" parent="."]
 script = ExtResource( 10 )
