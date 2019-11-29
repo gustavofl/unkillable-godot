@@ -4,9 +4,14 @@ const DIFICULDADE_FACIL = 0
 const DIFICULDADE_DIFICIL = 1
 const VOLUME_MIN = -80
 const VOLUME_MAXIMO = -5
+const CENA_PRINCIPAL = "res://cenas/cena_principal.tscn"
 
 var volume_porcentagem = 50
 var dificuldade = DIFICULDADE_FACIL
+var next_scene
+var player_attack = 5
+var player_max_life = 20
+var player_current_life
 
 func get_volume_menu():
 	return calcular_volume(volume_porcentagem)

@@ -53,6 +53,7 @@ margin_top = 301.937
 margin_right = 476.937
 margin_bottom = 327.937
 value = 50.0
+ticks_on_borders = true
 
 [node name="Dificuldade" type="Label" parent="."]
 margin_left = 247.927

@@ -19,8 +19,6 @@ func _ready():
 	$healthBar/bar.value = life
 	
 	posicao_inicial = get_position()
-	
-	flip = randi()%3 == 1
 
 func _process(delta):
 	if flip:
@@ -61,6 +59,11 @@ func die():
 
 func destroy():
 	$".".queue_free()
+	
+	var power_up_resource = preload("../colecionaveis/power_up.tscn")
+	var power_up = power_up_resource.instance()
+	power_up.set_position(get_position())
+	$"../..".add_child(power_up)
 
 func _on_chao_direita_body_exited(body):
 	flip = true

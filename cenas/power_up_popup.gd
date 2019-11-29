@@ -13,3 +13,4 @@ func _on_aumentar_vida_pressed():
 func fechar():
 	$".".hide()
 	get_tree().paused = false
+	get_tree().change_scene(Global.next_scene)
