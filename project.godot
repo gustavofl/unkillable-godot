@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="godot2"
-run/main_scene="res://cenas/cena_principal.tscn"
+run/main_scene="res://cenas/menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://cenas/Global.gd"
 
 [display]
 
